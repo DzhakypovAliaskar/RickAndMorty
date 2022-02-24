@@ -12,10 +12,11 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
 
+    @Singleton
     private val retrofitClient = RetrofitClient()
 
-    @Provides
     @Singleton
+    @Provides
     fun provideCharacterApiService(): CharacterApiService = retrofitClient
         .provideCharacterApiService()
 }

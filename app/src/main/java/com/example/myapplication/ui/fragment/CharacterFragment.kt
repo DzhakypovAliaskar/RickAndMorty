@@ -18,7 +18,6 @@ class CharacterFragment : Fragment() {
     private lateinit var binding: FragmentCharacterBinding
     private lateinit var viewModel: CharacterViewModel
     private val characterAdapter: CharacterAdapter = CharacterAdapter()
-    private val list: ArrayList<Character> = ArrayList()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,7 +34,7 @@ class CharacterFragment : Fragment() {
     }
 
     private fun getData() {
-        viewModel.fetchCharacter(1).observe(viewLifecycleOwner, {
+        viewModel.fetchCharacters(1).observe(viewLifecycleOwner, {
             when (it) {
                 is Resource.Error -> {
 
@@ -44,7 +43,7 @@ class CharacterFragment : Fragment() {
 
                 }
                 is Resource.Success -> {
-                    characterAdapter.addList(it.data)
+                    characterAdapter.addList(it.data?.results)
                 }
             }
         })

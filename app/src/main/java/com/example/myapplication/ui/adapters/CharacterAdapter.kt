@@ -7,14 +7,23 @@ import com.bumptech.glide.Glide
 import com.example.myapplication.data.remote.model.Character
 import com.example.myapplication.databinding.ItemCharacterBinding
 
-class CharacterAdapter : RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
+class CharacterAdapter: RecyclerView.Adapter<CharacterAdapter.ViewHolder>() {
 
     private var list: ArrayList<Character> = ArrayList()
 
-    fun addList(list: Character?) {
-        this.list.add(list!!)
+    fun addList(list: ArrayList<Character>?) {
+        if (list != null) {
+            this.list = list
+        }
         notifyDataSetChanged()
     }
+
+//    fun addList(list: Character?) {
+//        if (list != null) {
+//            this.list.add(list)
+//        }
+//        notifyDataSetChanged()
+//    }
 
     class ViewHolder(private val binding: ItemCharacterBinding) :
         RecyclerView.ViewHolder(binding.root) {
