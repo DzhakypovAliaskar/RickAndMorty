@@ -1,11 +1,12 @@
-package com.example.myapplication.data.remote.model
+package com.example.myapplication.data.model
 
+import com.example.myapplication.common.base.IBaseDiffModel
 import com.google.gson.annotations.SerializedName
 
-data class Character (
+data class Character(
 
     @SerializedName("id")
-    val id: Int,
+    override val id: Int,
 
     @SerializedName("status")
     val status: String,
@@ -15,4 +16,4 @@ data class Character (
 
     @SerializedName("image")
     val image: String
-)
+) : IBaseDiffModel

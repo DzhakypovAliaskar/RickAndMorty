@@ -5,8 +5,15 @@
       <map>
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_character.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_episodes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/fragment_location.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item_character.xml" value="0.2" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item_characters.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item_episodes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item_load_state_footer_view.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item_location.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/layout/item_model.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/User/AndroidStudioProjects/MyApplication4/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>

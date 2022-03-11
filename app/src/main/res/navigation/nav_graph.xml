@@ -3,12 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/characterFragment">
+    app:startDestination="@id/locationFragment">
 
     <fragment
         android:id="@+id/characterFragment"
-        android:name="com.example.myapplication.ui.fragment.CharacterFragment"
+        android:name="com.example.myapplication.ui.fragment.characters.CharacterFragment"
         android:label="fragment_character"
         tools:layout="@layout/fragment_character" />
+    <fragment
+        android:id="@+id/episodesFragment"
+        android:name="com.example.myapplication.ui.fragment.characters.EpisodesFragment"
+        android:label="fragment_episodes"
+        tools:layout="@layout/fragment_episodes" />
+    <fragment
+        android:id="@+id/locationFragment"
+        android:name="com.example.myapplication.ui.fragment.characters.LocationFragment"
+        android:label="fragment_location"
+        tools:layout="@layout/fragment_location" />
 
 </navigation>

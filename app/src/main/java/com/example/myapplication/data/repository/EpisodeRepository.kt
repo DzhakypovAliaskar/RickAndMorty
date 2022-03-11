@@ -6,28 +6,29 @@ import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.liveData
 import com.example.myapplication.common.base.BaseRepository
-import com.example.myapplication.data.remote.apiservices.CharacterApiService
-import com.example.myapplication.data.model.Character
-import com.example.myapplication.data.remote.pagingsources.CharacterPagingSources
+import com.example.myapplication.data.model.Episod
+import com.example.myapplication.data.remote.apiservices.EpisodeApiService
+import com.example.myapplication.data.remote.pagingsources.EpisodePagingSource
 import javax.inject.Inject
 
-class CharacterRepository @Inject constructor(
-    private val service: CharacterApiService
-):BaseRepository() {
+class EpisodeRepository @Inject constructor(
+    private val service: EpisodeApiService
+) : BaseRepository() {
 
-    fun fetchCharacters(page: Int) = doRequest{
-        service.fetchCharacters(page)
+    fun getEpisode(page: Int) = doRequest {
+        service.getEpisode(page)
     }
 
-    fun fetchCharacter(): LiveData<PagingData<Character>> {
+    fun getEpisodes(): LiveData<PagingData<Episod>> {
         return Pager(
             config = PagingConfig(
                 pageSize = 10,
                 prefetchDistance = 2
             ),
             pagingSourceFactory = {
-                CharacterPagingSources(service)
+                EpisodePagingSource(service)
             }
         ).liveData
     }
+
 }
