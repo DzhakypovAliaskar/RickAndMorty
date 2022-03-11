@@ -16,11 +16,10 @@ import com.example.myapplication.ui.adapters.paging.CommonLoadStateAdapter
 import com.example.myapplication.ui.viewmodel.LocationViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint  
 class LocationFragment : Fragment(R.layout.fragment_location) {
 
-    private lateinit var binding: FragmentLocationBinding
     private val locationAdapter : LocationPagingAdapter = LocationPagingAdapter()
+    private lateinit var binding: FragmentLocationBinding
     private val viewModel: LocationViewModel by viewModels()
 
     override fun onCreateView(

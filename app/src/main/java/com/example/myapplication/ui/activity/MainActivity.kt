@@ -10,7 +10,6 @@ import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.databinding.FragmentCharacterBinding
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding

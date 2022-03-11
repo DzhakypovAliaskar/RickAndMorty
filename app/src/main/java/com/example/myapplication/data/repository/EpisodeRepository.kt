@@ -15,10 +15,6 @@ class EpisodeRepository @Inject constructor(
     private val service: EpisodeApiService
 ) : BaseRepository() {
 
-    fun getEpisode(page: Int) = doRequest {
-        service.getEpisode(page)
-    }
-
     fun getEpisodes(): LiveData<PagingData<Episod>> {
         return Pager(
             config = PagingConfig(

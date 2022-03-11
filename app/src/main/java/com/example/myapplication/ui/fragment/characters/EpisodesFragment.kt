@@ -16,12 +16,10 @@ import com.example.myapplication.ui.adapters.paging.CommonLoadStateAdapter
 import com.example.myapplication.ui.viewmodel.EpisodeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class EpisodesFragment : Fragment(R.layout.fragment_episodes) {
-
-    private lateinit var binding: FragmentEpisodesBinding
     private val episodesAdapter: EpisodePagingAdapter = EpisodePagingAdapter()
     private val viewModel: EpisodeViewModel by viewModels()
+    private lateinit var binding: FragmentEpisodesBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -38,14 +36,6 @@ class EpisodesFragment : Fragment(R.layout.fragment_episodes) {
         setupRecycler()
     }
 
-    private fun setupRecycler() {
-        viewModel.getEpisodes().observe(this) {
-            lifecycleScope.launchWhenStarted {
-                episodesAdapter.submitData(it)
-            }
-        }
-    }
-
     private fun setupRequests() = with(binding.recyclerEpisode) {
         adapter = episodesAdapter.withLoadStateFooter(CommonLoadStateAdapter {
             episodesAdapter.retry()
@@ -53,6 +43,14 @@ class EpisodesFragment : Fragment(R.layout.fragment_episodes) {
         })
         episodesAdapter.addLoadStateListener { loadStates ->
             this.isVisible = loadStates.refresh is LoadState.NotLoading
+        }
+    }
+
+    private fun setupRecycler() {
+        viewModel.getEpisodes().observe(this) {
+            lifecycleScope.launchWhenStarted {
+                episodesAdapter.submitData(it)
+            }
         }
     }
 }

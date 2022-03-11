@@ -17,7 +17,6 @@ import com.example.myapplication.ui.adapters.paging.CommonLoadStateAdapter
 import com.example.myapplication.ui.viewmodel.CharacterViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
-@AndroidEntryPoint
 class CharacterFragment : Fragment(R.layout.fragment_character) {
 
     private lateinit var binding: FragmentCharacterBinding

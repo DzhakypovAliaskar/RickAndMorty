@@ -7,7 +7,6 @@ import com.example.myapplication.data.repository.LocationRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-@HiltViewModel
 class LocationViewModel @Inject constructor(
     private val locationRepository: LocationRepository
 ) : ViewModel() {

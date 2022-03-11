@@ -15,10 +15,6 @@ class CharacterRepository @Inject constructor(
     private val service: CharacterApiService
 ):BaseRepository() {
 
-    fun fetchCharacters(page: Int) = doRequest{
-        service.fetchCharacters(page)
-    }
-
     fun fetchCharacter(): LiveData<PagingData<Character>> {
         return Pager(
             config = PagingConfig(
