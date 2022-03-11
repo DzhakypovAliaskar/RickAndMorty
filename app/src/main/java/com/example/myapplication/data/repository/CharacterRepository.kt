@@ -11,9 +11,13 @@ import com.example.myapplication.data.model.Character
 import com.example.myapplication.data.remote.pagingsources.CharacterPagingSources
 import javax.inject.Inject
 
-class CharacterRepository @Inject constructor(
+class CharacterRepository(
     private val service: CharacterApiService
 ):BaseRepository() {
+
+    fun getCharacter(page: Int) = doRequest {
+        service.fetchCharacters(page)
+    }
 
     fun fetchCharacter(): LiveData<PagingData<Character>> {
         return Pager(

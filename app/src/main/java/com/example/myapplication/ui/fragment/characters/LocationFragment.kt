@@ -14,13 +14,15 @@ import com.example.myapplication.databinding.FragmentLocationBinding
 import com.example.myapplication.ui.adapters.LocationPagingAdapter
 import com.example.myapplication.ui.adapters.paging.CommonLoadStateAdapter
 import com.example.myapplication.ui.viewmodel.LocationViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 import dagger.hilt.android.AndroidEntryPoint
 
 class LocationFragment : Fragment(R.layout.fragment_location) {
 
     private val locationAdapter : LocationPagingAdapter = LocationPagingAdapter()
     private lateinit var binding: FragmentLocationBinding
-    private val viewModel: LocationViewModel by viewModels()
+    private val viewModel: LocationViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

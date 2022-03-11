@@ -15,10 +15,12 @@ import com.example.myapplication.ui.adapters.EpisodePagingAdapter
 import com.example.myapplication.ui.adapters.paging.CommonLoadStateAdapter
 import com.example.myapplication.ui.viewmodel.EpisodeViewModel
 import dagger.hilt.android.AndroidEntryPoint
+import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class EpisodesFragment : Fragment(R.layout.fragment_episodes) {
     private val episodesAdapter: EpisodePagingAdapter = EpisodePagingAdapter()
-    private val viewModel: EpisodeViewModel by viewModels()
+    private val viewModel: EpisodeViewModel by viewModel()
     private lateinit var binding: FragmentEpisodesBinding
 
     override fun onCreateView(

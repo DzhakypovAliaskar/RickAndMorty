@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -20,7 +21,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class CharacterFragment : Fragment(R.layout.fragment_character) {
 
     private lateinit var binding: FragmentCharacterBinding
-    private val viewModel: CharacterViewModel by viewModels()
+    private val viewModel: CharacterViewModel by viewModel()
     private val characterAdapter : CharacterPagingAdapter = CharacterPagingAdapter()
 
     override fun onCreateView(
